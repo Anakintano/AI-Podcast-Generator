@@ -1,0 +1,13 @@
+name: ai-podcast
+services:
+    - basedir: ""
+      match: services/*.py
+      runtime: python
+      start: uv run watchmedo auto-restart -p *.py --no-restart-on-command-exit -R uv run $SERVICE_PATH
+batch-services: []
+websites: []
+runtimes:
+    python:
+        dockerfile: ./python.dockerfile
+        context: ""
+        args: {}
